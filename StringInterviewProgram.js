@@ -1,3 +1,4 @@
+// program 1 print login and opentaps
 const url = "http://leaftaps.com/opentaps/control/login"
 const split = url.split("/")
 console.log(split)
@@ -11,8 +12,11 @@ console.log(split.length)
     }
  }
 
+//program 2 replace login with main
  console.log(url.replace("login", "main"))
 
+
+//program 3 check palindrome or not
  function palindrome(value){
     let reverse ="";
     for(let i=value.length-1; i>=0; i--){
@@ -26,6 +30,8 @@ console.log(split.length)
  palindrome("madam")
  palindrome("palindrome")
 
+
+// program 4 most frequent characters in the string
  function sequenceCharacter(value){
     let maxCount =0
      let maxChar = ''
@@ -47,6 +53,7 @@ console.log(split.length)
  sequenceCharacter(`javascript`)
 
 
+//program 5 find the count of vowels in the string
  function vowelsFind(character){
 
     let charVowels = 'aeiouAEIOU'
