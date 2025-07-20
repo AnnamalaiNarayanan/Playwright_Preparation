@@ -1,0 +1,58 @@
+1.How will you handle this using Playwright?
+   A:    To handle the alert in Playwright, There are two ways 
+  page.once event
+  page.on event
+
+  page.on:
+  =========
+  1. This is used, if the application is designed with lot of alerts.
+  2. If used whenever the alerts appeared in the application based on the function provided 
+  in the test cases will be handled
+  3. If alert is not handled , it will auto dismiss
+  
+  page.once:
+  ========
+  1. This is used when application is designed with minimal alert
+  2. If used whenever the alert appeared in the application, it is handled the first alert alone
+  3. If alert is not handled, it will auto dismiss
+
+  methods:
+  ========
+  accept() --> Accept the alert
+  dismiss() --> dismiss the alert
+  message() --> display the message of the alert
+  type() --> Displays the type of the alert
+
+2.How would your code react if the alert is not handled?
+  A: if not handled, by default it will auto dismiss
+
+
+3.How do you simulate both accept and cancel flows?
+
+    Get the type of the alert and based on the type provide the condition inside the listener event
+
+    ex:
+    page.on("handling alert actions", async alert =>{
+
+          const type = dialog.type()
+
+          if(type === "confirm"){
+          alert.accept()
+          }
+          else {
+          alert.dismiss()
+          }
+    })
+
+==============================================================================
+
+Window handling questions
+
+1. How would you handle multiple pages/tabs?
+   By using event listner, for single tab we can create the promise and click on the link and resolve
+   the promise.
+
+   using promise.all for multiple tabs are opened , we create array for the promise and store all the tabs insideit
+
+
+  
