@@ -52,7 +52,11 @@ Window handling questions
    By using event listner, for single tab we can create the promise and click on the link and resolve
    the promise.
 
-   using promise.all for multiple tabs are opened , we create array for the promise and store all the tabs insideit
+   using promise.all for multiple tabs are opened , we create array for the promise and store all the tabs inside it and access it.
+
+2. How do you wait for the new page context?
+   context.waitForEvent('page')  --> this will wait for the context to be loaded
+   await newPage.waitForLoadState(); --> This will wait for the page to be loaded completely
 
 
   
